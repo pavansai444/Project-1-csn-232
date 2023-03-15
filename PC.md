@@ -8,12 +8,18 @@ The Producer-Consumer problem is a classical multi process synchronization probl
 
 # Starve free and Deadlock free solution : 
 ### Bounded buffer :
+There is a buffer of n slots and each slot is capable of storing one unit of data.
+
 we have used 5 semaphores namely full,empty,m,p_sync,c_sync.Where m,p_sync,c_sync are binary semaphores.Initially full is intialised to 0,empty to buffersize,m, p_sync, c_sync to 1 Full semaphore shows out of n slots in buffer how many slots were filled ,empty semaphore shows how many slots are free to produce , m is the mutex ,p_sync and c_sync are used not to allow more than one producer or consumer to access empty and full semaphores respectively.
-Our code allows multiple producers produce without any clash by using mutex semaphore it won't allow multiple producers change the index (named prod used to identify where to produce) and also allows multiple consumers to consume.mutex locks while producer/consumer changing prod/cons and releases after completing changes.When a consumer wants to consume while full is 0 it is locked and released after a producer produces and increments full as well as when producer is trying to produce while empty is 0 it is locked and released when empty increments by consumer.\
+
+Our code allows multiple producers produce without any clash by using mutex semaphore it won't allow multiple producers change the index (named prod used to identify where to produce) and also allows multiple consumers to consume.mutex locks while producer/consumer changing prod/cons and releases after completing changes.When a consumer wants to consume while full is 0 it is locked and released after a producer produces and increments full as well as when producer is trying to produce while empty is 0 producer is locked forever.
 ### Cyclic buffer :
+It is a data structure that uses a single, fixed - size buffer as if it were connected end to end.
 
+we have used the same semaphores as in the case of bounded buffer the only difference is that when empty became 0 and producer tries to produce it waits until the consumer consumes and signals empty and after that produces starts produce from the beginning for this we used %buffersize indexing.It can be used in the cases where no.of productions is greater than buffer size.
+### infinite buffer :
+In this case we used single semaphore uncomsumed instead of empty and full semaphores.
 
-
-
+Unlike bounded and cyclic buffer we donot have to wait for consumer to consume while buffer is full beacuse we have buffer with variable size we can produce any no.of items without waiting for customer . unconsumed is used to determine whether consumer can consume means whether the buffer is empty or not.If the buffer is empty(unconcumed is 0) consumer is locked until producer produces an item(increments unconsumed ). 
 
 
