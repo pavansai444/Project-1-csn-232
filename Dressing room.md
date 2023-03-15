@@ -1,11 +1,11 @@
 # Dressing-room-problem-statement:
-  The dressing room synchronization problem is a classic synchronization problem in operating systems. It is used to model situations where multiple threads need to access a shared resource in a mutually exclusive manner.
+  The dressing room synchronization problem is a classic synchronization problem in operating systems. It is used to model situations where multiple threads need to     access a shared resource in a mutually exclusive manner.
   The problem is often formulated as follows:
-  1)There is a dressing room in a mall.
-  2)It is a common dressing room for both men and women.
-  3)Both men and women cannot use it simultaneously.
-  4)Multiple men can use it simultaneously.
-  5)Multiple women can use it simultaneously.
+1. There is a dressing room in a mall.
+2. It is a common dressing room for both men and women.
+3. Both men and women cannot use it simultaneously.
+4. Multiple men can use it simultaneously.
+5. Multiple women can use it simultaneously.
 ## Shared data:
   Common dressing room
 ## Starve free solution:
