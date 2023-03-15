@@ -11,13 +11,13 @@ The main aim is to make sure that if the ingredients (resources) are available t
 
 ### Sempahores Used are :
 
-- **AgentSem**: used for synchronization of the 3 agent threads which is initialised to 1. 
+- **`AgentSem`**: used for synchronization of the 3 agent threads which is initialised to 1. 
 
 3 semaphores are used for  synchronization of the smokers who take the ingredients 
 
-- **Tobacco**: initialised to 0
-- **Paper**: initialised to 0
-- **Match**: initialised to 0
+- **`tobacco`**: initialised to 0
+- **`paper`**: initialised to 0
+- **`match`**: initialised to 0
 
 ### Agnent Threads :
 
@@ -71,4 +71,4 @@ AgentSem.signal()
 
 ```
 ## DEADLOCK :
-This solution is **not** deadlock free. This is because when an agent places 2 ingredients on the table, each ingredients are required by exactly 2 smokers. Suppose **both the smokers take one ingredient each**, then both the smokers cannot make a complete cigarette and hence cannot smoke and do not release AgaentSem. This leads to a deadlock situation. (if both the ingredient were taken by a single smoker, then it wouldn’t have been a deadlock case). 
+This solution is **not** deadlock free. This is because when an agent places 2 ingredients on the table, each ingredients are required by exactly 2 smokers. Suppose **both the smokers take one ingredient each**, then both the smokers cannot make a complete cigarette and hence cannot smoke and do not release `AgentSem`. This leads to a deadlock situation. (if both the ingredient were taken by a single smoker, then it wouldn’t have been a deadlock case). 
