@@ -3,7 +3,8 @@
 
    Specifically, the problem is to design a mechanism that allows multiple readers to access the shared data simultaneously while ensuring that no writer can modify the data while it is being read. Additionally, the mechanism must ensure that only one writer can modify the data at a time, and that no other readers or writers can access the data while it is being written
    
-                      <img width="279" alt="image" src="https://user-images.githubusercontent.com/116514653/225281366-70a2a8be-8dc6-4eaa-9ace-cca51fd9f9b6.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/116514653/225282994-0f924ad5-5db4-4c5f-99d2-d9dda34aa861.png">
+
 
 
    
