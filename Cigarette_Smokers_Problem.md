@@ -1,5 +1,5 @@
 # Cigarette Smokers Problem
-## Problme Statement 
+## Problem Statement 
 Three smokers are present, each with an endless supply of either tobacco, paper, or matches. An agent places two of the ingredients at a time on a table. There are cigarette rolling machines, for each smoker. To make and smoke cigarettes, the smokers must cooperate together, but only one smoker can smoke at once.
 
 The objective is to create a synchronisation protocol to guarantee that the smokers can produce and consume cigarettes without experiencing resource conflicts, deadlocks, or starvation.
