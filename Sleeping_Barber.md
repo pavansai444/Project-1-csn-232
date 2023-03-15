@@ -40,8 +40,8 @@ if(freeseats>=1){
 }
 
 else{
- signal(&accessSeats);
   nonservedcust++;
+ signal(&accessSeats);
 
   printf("a customer left the barber shop as waiting room is full \n");
 }
