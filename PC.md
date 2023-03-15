@@ -8,7 +8,11 @@ The Producer-Consumer problem is a classical multi process synchronization probl
 
 # Starve free and Deadlock free solution : 
 ### Bounded buffer :
-we have used 5 semaphores namely full,empty,m,p_sync,c_sync.Where m,p_sync,c_sync are binary semaphores.Full semaphore shows out of n slots in buffer how many slots were filled ,empty semaphore shows how many slots are free to produce , m is the mutex ,p_sync and c_sync are used not to allow more than one producer or consumer to access empty and full semaphores respectively.
+we have used 5 semaphores namely full,empty,m,p_sync,c_sync.Where m,p_sync,c_sync are binary semaphores.Initially full is intialised to 0,empty to buffersize,m, p_sync, c_sync to 1 Full semaphore shows out of n slots in buffer how many slots were filled ,empty semaphore shows how many slots are free to produce , m is the mutex ,p_sync and c_sync are used not to allow more than one producer or consumer to access empty and full semaphores respectively.
+Our code allows multiple producers produce without any clash by using mutex semaphore it won't allow multiple producers change the index (named prod used to identify where to produce) and also allows multiple consumers to consume.mutex locks while producer/consumer changing prod/cons and releases after completing changes.When a consumer wants to consume while full is 0 it is locked and released after a producer produces and increments full as well as when producer is trying to produce while empty is 0 it is locked and released when empty increments by consumer.\
+### Cyclic buffer :
+
+
 
 
 
