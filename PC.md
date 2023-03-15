@@ -2,7 +2,7 @@
 The Producer-Consumer problem is a classical multi process synchronization problem,There are more than one Producer in this, Producer is producing some items, whereas there is more than one Consumers that is consuming the items produced by the Producer. The same memory buffer is shared by both producers and consumers.The producer should produce data only when the buffer is not full and the data can only be consumed by Consumer when buffer is not empty.Producer and Consumer are not allowed to access the same memory buffer at same time. 
 
 #### We have three different types of buffer 
-1.Bounded 
+1.Bounded   
 2.Cyclic  
 3.Infinite
 
@@ -17,7 +17,7 @@ Our code allows multiple producers produce without any clash by using mutex sema
 It is a data structure that uses a single, fixed - size buffer as if it were connected end to end.
 
 we have used the same semaphores as in the case of bounded buffer the only difference is that when empty became 0 and producer tries to produce it waits until the consumer consumes and signals empty and after that produces starts produce from the beginning for this we used %buffersize indexing.It can be used in the cases where no.of productions is greater than buffer size.
-### infinite buffer :
+### Infinite buffer :
 In this case we used single semaphore uncomsumed instead of empty and full semaphores.
 
 Unlike bounded and cyclic buffer we donot have to wait for consumer to consume while buffer is full beacuse we have buffer with variable size we can produce any no.of items without waiting for customer . unconsumed is used to determine whether consumer can consume means whether the buffer is empty or not.If the buffer is empty(unconcumed is 0) consumer is locked until producer produces an item(increments unconsumed ). 
