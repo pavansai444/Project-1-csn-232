@@ -1,4 +1,5 @@
-# Project-1-CSN-232
+# Synchronization Problems in Concurrent Programming
+<em> Project-1-CSN-23 <em>
 
 This repository contains implementations of various synchronization problems commonly encountered in concurrent programming. Each problem is designed to illustrate different aspects of process synchronization and inter-process communication.
 
